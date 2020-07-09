@@ -8,10 +8,11 @@ import com.etiya.exercise.util.TPage;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-
+@Service
 public class IssueServiceImpl implements IssueService {
 
     //setter injection
@@ -53,5 +54,11 @@ public class IssueServiceImpl implements IssueService {
     @Override
     public Boolean delete(IssueDto issue) {
         return null;
+    }
+
+    @Override
+    public Boolean delete(Long id) {
+        issueRepository.deleteById(id);
+        return true;
     }
 }

@@ -1,5 +1,6 @@
 package com.etiya.exercise.service;
 
+import com.etiya.exercise.dto.ProjectDto;
 import com.etiya.exercise.entity.Project;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -8,13 +9,17 @@ import java.util.List;
 
 public interface ProjectService {
 
-    Project save(Project project);
+    ProjectDto save(ProjectDto project);
 
-    Project getById(Long id);
+    ProjectDto getById(Long id);
 
     Page<Project> getAllPageable(Pageable pageable);
 
     List<Project> getAllByProjectCode(String projectCode);
 
     Boolean delete(Project project);
+
+    Boolean delete(Long id);
+
+    ProjectDto update(Long id, ProjectDto projectDto);
 }

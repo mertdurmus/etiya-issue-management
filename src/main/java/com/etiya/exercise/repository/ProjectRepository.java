@@ -18,4 +18,6 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     Page<Project> findAll(Pageable pageable);
 
+    Project getByProjectCode(String projectCode);
+
 }
